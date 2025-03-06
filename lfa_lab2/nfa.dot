@@ -1,0 +1,13 @@
+digraph FA {
+  rankdir=LR;
+  node [shape = circle];
+  "q3" [shape=doublecircle];
+  "" [shape=none];
+  "" -> "q0";
+  "q1" -> "q2" [label="b"];
+  "q1" -> "q1" [label="b"];
+  "q2" -> "q3" [label="c"];
+  "q0" -> "q1" [label="a"];
+  "q0" -> "q2" [label="b"];
+  "q3" -> "q1" [label="a"];
+}
