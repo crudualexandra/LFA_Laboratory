@@ -126,13 +126,13 @@ The results demonstrate the functionality of the implemented JSON Lexer applicat
 **Initial UI State (1.PNG):**  
 Shows the initial user interface. Users are presented with instructions for entering valid JSON data into a monospaced `TextEditor`. Below the guide, an example JSON snippet is pre-loaded into the editor.
 
-![Initial UI State](1.PNG)
+
 <img src="1.PNG" width="300">
 
 **Tokenization and Colored Preview (2.PNG):**  
 Displays the state after the "Tokenize" button is pressed. The identified tokens are listed clearly, showing their type, value, and position in the input string. Additionally, the JSON snippet is displayed again with syntax highlighting, visually differentiating token types through distinct colors (e.g., strings in red, numbers in green, booleans in purple, and structural tokens in blue).
 
-![Tokenization and Colored Preview](2.PNG)
+
 <img src="2.PNG" width="300">
 
 ## Conclusion
