@@ -10,7 +10,6 @@ import Foundation
 /// 7. Generating .dot for GraphViz (both NFA and DFA)
 /// 8. Generating random strings from the derived grammar
 
-// MARK: - 1) Build the Variant #10 NFA
 
 /// Q = {q0,q1,q2,q3}
 /// Σ = {a,b,c}
@@ -104,16 +103,6 @@ print("\n--- GraphViz .dot Representation of the NFA ---\n\(nfaDot)")
 Logger.log("Generating DOT content for the DFA...", level: .info)
 let dfaDot = dfa.toDot()
 print("\n--- GraphViz .dot Representation of the DFA ---\n\(dfaDot)")
-
-// (Optional) Write to files if you want:
-// let nfaUrl = URL(fileURLWithPath: "nfa.dot")
-// try? nfaDot.write(to: nfaUrl, atomically: true, encoding: .utf8)
-// let dfaUrl = URL(fileURLWithPath: "dfa.dot")
-// try? dfaDot.write(to: dfaUrl, atomically: true, encoding: .utf8)
-
-// Then run in Terminal:
-// dot -Tpng nfa.dot -o nfa.png
-// dot -Tpng dfa.dot -o dfa.png
 
 // MARK: - 8) Generate Random Strings from Grammar
 Logger.log("Generating random strings from the derived grammar...", level: .info)

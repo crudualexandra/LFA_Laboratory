@@ -26,7 +26,7 @@ struct Grammar {
             return String(symbol)
         }
         
-        // Otherwise, pick one of the productions for that non-terminal
+        // pick one of the productions for that non-terminal
         guard let productions = rules[symbol], !productions.isEmpty else {
             Logger.log("No productions found for symbol '\(symbol)', returning empty.", level: .warn)
             return ""
@@ -46,7 +46,7 @@ struct Grammar {
         return result
     }
     
-    /// Generate `count` random strings from the grammar (starting at `startSymbol`).
+    // Generate `count` random strings from the grammar (starting at `startSymbol`).
     func generateStrings(count: Int, maxDepth: Int = 15) -> [String] {
         Logger.log("Generating \(count) strings from start symbol '\(startSymbol)'...", level: .info)
         var result: [String] = []
@@ -121,8 +121,7 @@ struct Grammar {
                     }
                 }
                 
-                // If any production has length > 1 with a non-terminal => might break context-free
-                // (Following the simplified approach in the Java code.)
+              
                 if rightSide.count > 1 && nonTerminalCount > 0 {
                     isContextFree = false
                 }

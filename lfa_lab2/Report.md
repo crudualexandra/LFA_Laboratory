@@ -79,7 +79,7 @@ The process of converting a grammar into a finite automaton involves translating
 * Code snippets 
 ### Grammar.swift
 
-```
+```swift
 import Foundation
 
 

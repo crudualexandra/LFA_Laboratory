@@ -1,13 +1,6 @@
 import Foundation
 
 
-/// Includes:
-/// - A function `accepts(_:)` to check if a string is accepted by the (N)DFA
-/// - A function `isDeterministic()` to check if for every state & symbol there's at most 1 next state
-/// - A function `toDFA()` to convert an NFA to a DFA (subset construction)
-/// - A function `toRegularGrammar()` to build a right-linear grammar from the automaton
-/// - A function `toDot()` to generate GraphViz .dot representation
-///
 struct FiniteAutomaton {
     let states: Set<String>
     let alphabet: Set<Character>
@@ -15,8 +8,8 @@ struct FiniteAutomaton {
     let initialState: String
     let finalStates: Set<String>
     
-    /// Check whether this FA (NFA/DFA) accepts a given input string.
-    /// For an NFA, we track all possible current states at once.
+    // Check whether this FA (NFA/DFA) accepts a given input string.
+    // For an NFA track all possible current states at once.
     func accepts(_ input: String) -> Bool {
         Logger.log("Running acceptance check for input: \(input)", level: .info)
         var currentStates: Set<String> = [initialState]
@@ -45,8 +38,8 @@ struct FiniteAutomaton {
         return isAccepted
     }
     
-    /// Check if the automaton is deterministic:
-    /// For each state and each symbol, there should be *at most one* next state.
+    // Check if the automaton is deterministic:
+    //For each state and each symbol, there should be *at most one* next state.
     func isDeterministic() -> Bool {
         for (state, transitionMap) in transitions {
             for (symbol, nextStates) in transitionMap {
@@ -59,8 +52,8 @@ struct FiniteAutomaton {
         return true
     }
     
-    /// Convert this NFA to an equivalent DFA using the subset construction.
-    /// Returns a new `FiniteAutomaton` that is deterministic.
+    // Convert this NFA to an equivalent DFA using the subset construction.
+    // Returns a new `FiniteAutomaton` that is deterministic.
     func toDFA() -> FiniteAutomaton {
         Logger.log("Converting NFA to DFA via subset construction...", level: .info)
         
@@ -159,14 +152,7 @@ struct FiniteAutomaton {
         return dfa
     }
     
-    /// Convert this FA to a right-linear Grammar.
-    /// We'll map each state `qi` to a nonterminal (e.g., S, A, B, C, ...).
-    /// For each transition q_i --a--> q_j, add a production:
-    ///    NT(q_i) -> a NT(q_j)
-    /// If q_j is a final state, also add:
-    ///    NT(q_i) -> a
-    /// If q_i is final, add an ε-production:
-    ///    NT(q_i) -> ε
+
     func toRegularGrammar() -> Grammar {
         Logger.log("Converting FA to a right-linear grammar...", level: .info)
         
