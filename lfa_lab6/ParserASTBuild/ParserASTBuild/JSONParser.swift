@@ -11,7 +11,7 @@ public class JSONParser {
     private var pos = 0
 
     public init(tokens: [Token]) {
-        // drop whitespace tokens if you like
+      
         self.tokens = tokens.filter { $0.type != .whitespace }
     }
 

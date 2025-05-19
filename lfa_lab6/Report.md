@@ -161,7 +161,7 @@ digraph AST {
   ... (formatted AST tree)
 }
 ```
-<img src="1.PNG" width="300">
+<img src="ast.png" width="300">
 
 
 
